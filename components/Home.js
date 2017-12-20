@@ -12,10 +12,6 @@ export default class Home extends React.Component {
     console.log(dataTextInputYangTadi)
   }
 
-  goToResults() {
-    this.props.page()
-  }
-
   render() {
     return (
       <View>
