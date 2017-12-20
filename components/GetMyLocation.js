@@ -35,12 +35,12 @@ export default class GetMyLocation extends React.Component {
         this.setState({
             lat: location.coords.latitude,
             long: location.coords.longitude
-        });
-        console.log(this.state.errorMessage)
-        passMyLocationToParent()
+        }, () => this.passMyLocationToParent());
+        
     };
 
   passMyLocationToParent() {
+    console.log('halo from pass')
     this.props.myLocation(this.state)
   }
 

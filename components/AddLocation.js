@@ -1,7 +1,7 @@
 import React from 'react'
 import { StyleSheet, Text, View, Button, TextInput } from 'react-native';
 
-export default class Home extends React.Component {
+export default class AddLocation extends React.Component {
   constructor(props) {
     super(props);
   

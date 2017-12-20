@@ -25,14 +25,18 @@ export default class App extends React.Component {
 
   saveLocationToState(data) {
     this.setState({myLocation: data})
+    console.log('lokasi saya', this.state.myLocation)
   }
 
   render() {
     return (
       <View>
-        <Text>{this.state.title}</Text>
-        {this.state.page == 'home' && <Home myLocation={this.saveLocationToState.bind(this)} textnya='Dari induk' page={this.pindahHalaman.bind(this)}/>}
-        {this.state.page == 'results' && <Results page={this.pindahHalaman.bind(this)}/>}
+        <Text>{JSON.stringify(this.state.myLocation)}</Text>
+        {this.state.page == 'home' && <Home 
+                                          myLocation={this.saveLocationToState.bind(this)} 
+                                          textnya='Dari induk' 
+                                          page={this.pindahHalaman.bind(this)}/>}
+        {this.state.page == 'results' && <Results myLocation={this.state.myLocation} page={this.pindahHalaman.bind(this)}/>}
       </View>
     );
   }
