@@ -12,10 +12,14 @@ export default class Home extends React.Component {
     console.log(dataTextInputYangTadi)
   }
 
+  saveToAppState(location) {
+    this.props.myLocation(location)
+  }
+
   render() {
     return (
       <View>
-        <GetMyLocation />
+        <GetMyLocation myLocation={this.saveToAppState.bind(this)} />
         <AddLocation data={this.handleTextInput.bind(this)} />
         <Button 
           onPress={this.goToResults.bind(this)}
